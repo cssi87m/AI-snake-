@@ -1,0 +1,37 @@
+* 5 components of MDPs:
+    - Set of states 
+    - Set of actions (straight, left, right)
+    - Reward function: 
+        + Eat food: +5
+        + Game over: -10
+        + Else: 0
+    - Transition probability function : 
+    - Discounts for future rewards 
+* Policy is deterministic 
+We have snake and food on the board randomly placed.
+
+Calculate the state of the snake using the 11 values and if any of the conditions is true then set that value to zero else set one.
+(The state is: 
+[danger up, danger down, danger left, danger right,  direction left, direction right, direction up, direction down, 
+food left, food right, food up, food down])
+Based on the current Head position agent will calculate the 11 state values as described above.
+
+
+After getting these states, the agent would pass this to the model and get the next move to perform. 
+
+After executing the next state calculate the reward
+Update the Q value  and Train the Model.
+Model:
+    - Input layer: State 
+    - Hidden layers 
+    - Output layer: Action(prob vector)
+
+Add a parameter expressing distance of fruit and snake position
+
+Use experience replay buffer to prevent stucking in local optima 
+
+Building a sequential model 
+
+( state -> action -> reward -> state -> ....)
+environment 
+* find a hamiltonian cycle and let the snake follow it 
